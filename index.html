@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.122.0" />
+    <link rel="icon" href="assets/brand/magicbot-favicon-white.png">
+    <title>Soluções MagicBot</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/product/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div> -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol
+        id="aperture"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path
+          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+        />
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        />
+      </symbol>
+    </svg>
+
+    <nav
+      class="navbar navbar-expand-md bg-dark sticky-top border-bottom"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <a class="navbar-brand d-md-none" href="#">
+          <svg class="bi" width="24" height="24">
+            <use xlink:href="#aperture" />
+          </svg>
+          Aperture
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvas"
+          aria-labelledby="offcanvasLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Aperture</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <img src="assets/brand/magicbot-favicon-white.png" width="25px" height="25px" />
+                </a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="#">Automatize diálogos, impulsione resultados</a>
+              </li>
+              <!-- <li class="nav-item"><a class="nav-link" href="#">Inicial</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Enterprise</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg class="bi" width="24" height="24">
+                    <use xlink:href="#cart" />
+                  </svg>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div
+        class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary"
+      >
+        <div class="col-md-6 p-lg-5 mx-auto my-5">
+          <h1 class="display-3 fw-bold">Transforme conversas em soluções automáticas</h1>
+          <h3 class="fw-normal text-muted mb-3">
+            Crie soluções adaptadas às suas necessidades
+          </h3>
+          <!-- <div class="d-flex gap-3 justify-content-center lead fw-normal">
+            <a class="icon-link" href="#">
+              Learn more
+              <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+            </a>
+            <a class="icon-link" href="#">
+              Buy
+              <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+            </a>
+          </div> -->
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div
+          class="product-device product-device-2 shadow-sm d-none d-md-block"
+        ></div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <!-- <svg width="33" height="25" viewBox="0 0 33 25" fill="none" class="_a83i _wauiIcon__fill--transparent _wauiIcon__stoke--transparent"><path d="M9.28125 5.9028V3.81946C9.28125 3.08275 9.57102 2.37608 10.0867 1.85515C10.6025 1.33422 11.3019 1.04169 12.0312 1.04169H20.9688C21.6981 1.04169 22.3975 1.33422 22.9133 1.85515C23.429 2.37608 23.7188 3.08275 23.7188 3.81946V5.9028" stroke="#43CD66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.21875 13.5417V16.3195" stroke="#43CD66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M25.7812 13.5417V16.3195" stroke="#43CD66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1.03118 8.93045C1.02297 8.54045 1.091 8.15282 1.23142 7.78944C1.37184 7.42605 1.58192 7.09414 1.84952 6.81287C2.11711 6.53161 2.437 6.30647 2.79089 6.1503C3.14477 5.99413 3.52564 5.90999 3.91177 5.90277H29.0881C29.4742 5.90999 29.8551 5.99413 30.209 6.1503C30.5629 6.30647 30.8827 6.53161 31.1503 6.81287C31.4179 7.09414 31.628 7.42605 31.7684 7.78944C31.9089 8.15282 31.9769 8.54045 31.9687 8.93045V20.9306C31.9769 21.3206 31.9089 21.7083 31.7684 22.0717C31.628 22.435 31.4179 22.767 31.1503 23.0482C30.8827 23.3295 30.5629 23.5546 30.209 23.7108C29.8551 23.867 29.4742 23.9511 29.0881 23.9583H3.91177C3.52564 23.9511 3.14477 23.867 2.79089 23.7108C2.437 23.5546 2.11711 23.3295 1.84952 23.0482C1.58192 22.767 1.37184 22.435 1.23142 22.0717C1.091 21.7083 1.02297 21.3206 1.03118 20.9306V8.93045Z" stroke="#43CD66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M1.03125 14.9305H31.9688" stroke="#43CD66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+              <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z"/>
+            </svg>            <h2 class="display-5">WhatsApp Bot</h2>
+            <p class="lead">Responda seus clientes instantaneamente</p>
+          </div>
+          <div
+            class="bg-body-tertiary shadow-sm mx-auto"
+            style="background: transparent !important; width: 80%; height: 300px; border-radius: 21px 21px 0 0; box-shadow: none !important;"
+          >
+          <img src="assets/bot_art.png" style="border-radius: 38px 38px 0 0;" />
+        </div>
+        </div>
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
+              <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"></path>
+              <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0"></path>
+            </svg>
+            <h2 class="display-5">Integrações ilimitadas</h2>
+            <p class="lead">Aproveite os serviços que já possui a seu favor</p>
+          </div>
+          <div
+            class="bg-dark shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          >
+          <img src="assets/integration_art.png" style="border-radius: 21px 21px 0 0;" />
+        </div>
+        </div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+              <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+            </svg>
+            <h2 class="display-5">Interação Humanizada</h2>
+            <p class="lead">Determine o momento ideal para humanizar a conversa</p>
+          </div>
+          <div
+            class="bg-dark shadow-sm mx-auto"
+            style="width: fit-content; height: 300px; border-radius: 21px 21px 0 0"
+          >
+          <img src="assets/humanize_art.png" style="border-radius: 21px 21px 0 0;" />
+        </div>
+        </div>
+        <div
+          class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+              <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+              <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+            </svg>
+            <h2 class="display-5">Simplifique seu trabalho</h2>
+            <p class="lead">Permita seus colaboradores focarem no cliente</p>
+          </div>
+          <div
+            class="bg-body-tertiary shadow-sm mx-auto"
+            style="background: transparent !important; width: 80%; height: 325px; border-radius: 21px 21px 0 0; box-shadow: none !important; overflow-y: hidden;"
+          >
+          <img src="assets/simplify_art.png" style="border-radius: 21px 21px 0 0; margin-top: -230px;" />
+        </div>
+        </div>
+      </div>
+
+      <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <h2 class="display-5">Simplifique seu trabalho</h2>
+            <p class="lead">Permita que seus colaboradores se concentrem no atendimento ao cliente</p>
+          </div>
+          <div
+            class="bg-body shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"
+          ></div>
+        </div>
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-body shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"
+          ></div>
+        </div>
+      </div>
+
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-body shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
+        </div>
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-body shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
+        </div>
+      </div> -->
+    </main>
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <img src="assets/brand/magicbot-favicon-white.png" width="25px" height="25px" />
+            <title>MágicoBot</title>
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+            />
+          </svg>
+          <small class="d-block mb-3 text-body-secondary"
+            >&copy; 2024</small
+          >
+        </div>
+        <!-- <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Cool stuff</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Random feature</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Team feature</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Stuff for developers</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Another one</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Last time</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Resource name</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Resource</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Another resource</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Final resource</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Government</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#">Gaming</a>
+            </li>
+          </ul>
+        </div> -->
+        <div class="col-6 col-md">
+          <h5>Sobre</h5>
+          <ul class="list-unstyled text-small">
+            <!-- <li>
+              <a class="link-secondary text-decoration-none" href="contact">Contato</a>
+            </li> -->
+            <li>
+              <a class="link-secondary text-decoration-none" href="privacy/index.html"
+                >Privacidade</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="terms/index.html">Termos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
